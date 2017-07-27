@@ -1,0 +1,657 @@
+/*顶部导航*/
+*{
+    margin: 0 auto;
+}
+.top{
+    background-color: #2459a2;
+    height:40px;
+}
+.top #logo{
+    padding-top: 10px ;
+    padding-left: 130px;
+    line-height: 40px;
+    float: left;
+}
+
+.nav{
+    float: left;
+    /*padding-top: 10px;*/
+    margin-left: 40px;
+}
+
+.nav a{
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color:#c0cddf;
+    font-size:14px;
+    text-decoration: none;
+    /*inline-height: 40px;*/
+}
+
+#register{
+    display: inline-block;
+    margin-left: 150px;
+}
+.nav a:hover{
+    background-color: #396bb3;
+    color: #fff;
+    inline-height: 40px;
+}
+
+.form{
+    float: left;
+    margin-top: 4px;
+}
+.search{
+    color: #333;
+    line-height: 25px\9;
+    padding: 2px 2px 2px 5px;
+    height: 25px;
+    width: 91px;
+    border: 1px solid #e0e0e0;
+    float: left;
+    background-color: #f4f4f4;
+}
+
+.form a.search-btn{
+    width: 30px;
+    height: 29px;
+    display: inline-block;
+    border-left: 0;
+    border: 1px solid #e0e0e0;
+    background-color: #f4f4f4;
+    float: left;
+}
+
+.icon{
+    background: url("http://dig.chouti.com/images/icon.png");
+    background-position: 0 -197px;
+    display: block;
+    height: 12px;
+    margin-left: 11px;
+    margin-top: 9px;
+    width: 11px;
+}
+
+/*最左侧灰色布景*/
+.l{
+    clear: left;
+    margin-left: 0;
+    background-color: darkgray;
+    width: 130px;
+    height: 1500px;
+    float:left;
+}
+
+.left-white{
+    float:left;
+    margin-left: 0;
+    background-color: white;
+    width: 30px;
+    height: 1500px;
+}
+/*中间布局*/
+.left{
+    float: left;
+    width: 740px;
+    height: 1385px;
+    margin-left: 0;
+    /*border: 1px solid red;*/
+}
+
+.right-white{
+    float: left;
+    width: 30px;
+    height: 1500px;
+    margin-left: 0;
+    /*border: 1px solid green;*/
+}
+
+
+.right{
+    float: left;
+    width: 300px;
+    height: 1500px;
+    margin-left: 0;
+    /*border: 1px solid green;*/
+}
+.r{
+    float: left;
+    width: 110px;
+    height: 1500px;
+    margin-left: 0;
+    background: darkgray;
+    /*border: 1px solid blue;*/
+}
+
+/*中间顶部布局*/
+.top1{
+    width: 740px;
+    height: 50px;
+    border-bottom: 1px solid #ccdcef;
+}
+
+.left-a{
+    float: left;
+    margin-top: 5px;
+    margin-left: 0px;
+    line-height: 30px;
+    /*border: 1px solid darkcyan;*/
+}
+.left-a a{
+    padding: 0 15px;
+    font-size: 13px;
+}
+
+.right-a{
+    margin-top: 5px;
+    margin-left: 180px;
+    line-height: 30px;
+    float: left;
+    /*border: 1px solid salmon;*/
+
+}
+.right-a a{
+    padding: 0 10px;
+    font-size: 13px;
+}
+
+.top1 a{
+    text-decoration: none;
+}
+
+.left-a #hot{
+    display: inline-block;
+    width: 32px;
+    color:black;
+    background: url("http://dig.chouti.com/images/tip.png?v=2.9");
+    background-repeat: no-repeat;
+    background-position-x: 1px;
+    background-position-y: -297px;
+}
+
+.right-a #sort{
+    color: #b4b4b4
+}
+.right-a .two{
+    color: #390;
+}
+.left-a .one:hover{
+    text-decoration: underline;
+}
+.right-a .two:hover{
+    text-decoration: underline;
+}
+.add{
+    float:right;
+    /*float: left;*/
+    width: 120px;
+    height: 30px;
+    margin-top: 5px;
+    margin-right: 10px;
+    text-align: center;
+    background-color: #84a42b;
+}
+
+.add .pub-btn{
+    line-height: 30px;
+    color: white;
+    font-size: 14px;
+}
+
+/*内容布局部分*/
+.content{
+    width: 740px;
+    height: 120px;
+    border-bottom: 1px solid #ccdcef;
+}
+
+.content .content-one-left{
+    float: left;
+    margin-left: 0px;
+    width: 640px;
+    height: 60px;
+    /*border: 1px solid green;*/
+}
+.content .img{
+    /*float: left;*/
+    margin-top: 3px;
+    margin-right: 0px;
+}
+.content .content-one-left .cont{
+    /*display: inline-block;*/
+    margin-top: 20px;
+    padding-top: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #369;
+}
+.content .content-one-left .cont:hover{
+    text-decoration: underline;
+}
+.content .content-one-left  span{
+    font-size: 12px;
+    color: #b4b4b4;
+    line-height: 20px;
+}
+
+.content .content-one-left .area-num{
+    display: inline-block;
+    line-height: 20px;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #b4b4b4;
+}
+
+.icons{
+    clear:left;
+    float: left;
+}
+.icons a{
+    text-decoration: none;
+    float: left;
+}
+.icons .icon1 span{
+    float: left;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    background: url("http://dig.chouti.com/images/icon_18_118.png?v=2.13");
+    background-repeat: no-repeat;
+    background-position: 0 -40px;
+}
+
+.icons a b{
+    float: left;
+    display: inline-block;
+    margin-top: 1px;
+    margin-left: 5px;
+    color: #99aecb;
+}
+.icons a:hover b{
+    text-decoration: underline;
+}
+.icons .icon1:hover span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    background: url("http://dig.chouti.com/images/icon_18_118.png?v=2.13");
+    background-repeat: no-repeat;
+}
+
+.icons .icon2 span{
+    float: left;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    margin-left: 25px;
+    background: url("http://dig.chouti.com/images/icon_18_118.png?v=2.13");
+    background-repeat: no-repeat;
+    background-position: 0 -100px;
+}
+
+.icons .icon2:hover span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    margin-left: 25px;
+    background: url("http://dig.chouti.com/images/icon_18_118.png?v=2.13");
+    background-repeat: no-repeat;
+    background-position: 0 -80px;
+}
+
+.icons .icon3 span{
+    float: left;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    margin-left: 25px;
+    background: url("http://dig.chouti.com/images/icon_18_118.png?v=2.13");
+    background-repeat: no-repeat;
+    background-position: 0 -160px;
+}
+.icons .icon3 b{
+    font-size: 14px;
+    font-weight: 400;
+    color: #99aecb;
+}
+.icons .icon3:hover span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    margin-left: 25px;
+    background: url("http://dig.chouti.com/images/icon_18_118.png?v=2.13");
+    background-repeat: no-repeat;
+    background-position: 0 -140px;
+}
+
+.icons .icon4 span{
+    float: left;
+    display: block;
+    margin-top: 3px;
+    margin-left: 25px;
+}
+.icons .icon4 b{
+    display: inline-block;
+    margin-top: 3px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #99aecb;
+}
+
+.icons .time{
+    float: left;
+    display: block;
+    margin-top: 3px;
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #e59373;
+}
+.icons a.time:hover span{
+    text-decoration: underline;
+}
+.icons .go-hot{
+    float: left;
+    display: inline-block;
+    margin-top: 3px;
+    margin-left: 5px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.hidden {
+    float: left;
+    visibility: hidden;
+}
+
+.content:hover .hidden{
+    visibility: visible;
+}
+.hidden .share{
+    display: inline-block;
+    margin-top: 3px;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.hidden .icon5{
+    display: inline-block;
+}
+.icon5 a{
+    display: inline-block;
+    background: url("http://dig.chouti.com/images/share_icon.png?v=2.15");
+    background-repeat: no-repeat;
+}
+.icon5 a.add1{
+    background-position: 0 0px;
+    width: 17px;
+    height: 14px;
+}
+
+.icon5 a.add1:hover{
+    background-position: 0 -90px;
+    width: 17px;
+    height: 14px;
+}
+
+.icon5 a.add2{
+    margin-left: 7px;
+    background-position: 0 -15px;
+    width: 17px;
+    height: 14px;
+}
+
+.icon5 a.add2:hover{
+    background-position: 0 -105px;
+    width: 17px;
+    height: 14px;
+}
+
+.icon5 a.add3{
+    margin-left: 5px;
+    background-position: 0 -30px;
+    width: 17px;
+    height: 14px;
+}
+
+.icon5 a.add3:hover{
+    margin-left: 5px;
+    background-position: 0 -120px;
+    width: 17px;
+    height: 14px;
+}
+
+.icon5 a.add4{
+    margin-left: 5px;
+    background-position: 0 -60px;
+    width: 17px;
+    height: 14px;
+}
+
+.icon5 a.add4:hover{
+    margin-left: 5px;
+    background-position: 0 -151px;
+    width: 17px;
+    height: 14px;
+}
+
+/*分页布局*/
+.page{
+    width: 740px;
+    height: 80px;
+    border-bottom: 1px solid #ccdcef;
+}
+ul.one-ul{
+    list-style-type: none;
+    padding-left: 0px;
+    margin-top: 15px;
+}
+
+div ul li{
+    display: inline;
+}
+
+div ul li a.first-a{
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    width: 34px;
+    height: 34px;
+    color: black;
+    line-height: 34px;
+    margin-right: 2px;
+    font-size: 12px;
+}
+
+a.second-a{
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    width: 34px;
+    height: 34px;
+    color: #369;
+    border: 1px solid #e1e1e1;
+    line-height: 34px;
+    margin-left: 3px;
+    margin-right: 2px;
+    font-size: 12px;
+    -webkit-border-radius: 5px;
+}
+
+a.third-a{
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    width: 77px;
+    height: 34px;
+    color: #369;
+    border: 1px solid #e1e1e1;
+    line-height: 34px;
+    margin-left: 3px;
+    font-size: 12px;
+    font-weight: 400;
+    -webkit-border-radius: 5px;
+}
+.page  ul li.page-col:hover a{
+    color: white;
+    background: #369;
+}
+
+.page ul li.next-page:hover a{
+    color: white;
+    background: #369;
+}
+
+.right .check{
+    margin-top: 10px;
+}
+.right .check a{
+    font-size: 14px;
+    font-weight: bold;
+    color: #369;
+    cursor: pointer;
+    padding-left: 30px;
+    background: url("http://dig.chouti.com/images/view.png") no-repeat left center;
+    height: 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+.right .check:hover a{
+    text-decoration: underline;
+}
+
+.right .first-ten{
+    margin-top: 10px;
+}
+.right .first-ten b{
+    font-size: 14px;
+}
+.right .first-ten b.num{
+    color: red;
+}
+
+.right .top-band{
+    margin-top: 10px;
+}
+.right .top-band a{
+    display: inline-block;
+    background-color: #4767b2;
+    width: 300px;
+    height: 35px;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 12px;
+}
+.right .top-bad #top-bandArrow{
+    left: 145px;
+    position: absolute;
+    top: 35px;
+    border-color: #4767b2 #fff #fff;
+    font-style: normal;
+}
+
+.right .num1{
+    margin-top: 10px;
+    width: 300px;
+    height: 50px;
+    border-bottom: 1px dashed darkgray;
+}
+.right .num1 .n1{
+    float: left;
+    display: block;
+    width: 32px;
+    height: 22px;
+    line-height: 22px;
+    color: #666;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    background-color: #f0f0f0;
+    text-decoration: none;
+}
+
+.right .num1 .c1{
+    display: block;
+    color: #333;
+    margin-left: 40px;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 18px;
+}
+.right .num1 .c1:hover{
+    color: #369;
+}
+
+.r .gotop{
+    display: block;
+    left: 1252px;
+    background: url("http://dig.chouti.com/images/Back-to-the-top_38_78.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    bottom: 30px;
+    cursor: pointer;
+    height: 38px;
+    width: 38px;
+    position: fixed;
+    z-index: 2;
+}
+
+.r a:hover {
+    background: url("http://dig.chouti.com/images/Back-to-the-top_38_78.png");
+    background-repeat: no-repeat;
+    background-position: 0 -40px;
+}
+
+.footer{
+
+    font-size: 12px;
+}
+
+.footer .bottom {
+    width: 700px;
+    text-align: center;
+}
+.footer .bottom a{
+    text-decoration: none;
+    color: #369;
+}
+
+.footer .bottom2{
+    margin-left: 120px;
+    width: 600px;
+}
+
+.footer .bottom2 #bottom-two{
+    text-decoration: none;
+    color: #999;
+}
+
+.footer .bottom3{
+    margin-left: 150px;
+    width: 450px;
+}
+
+.footer .bottom3 a{
+    text-decoration: none;
+    color: #369;
+}
+
+.footer .bottom4{
+    margin-left: 250px;
+    width: 300px;
+}
