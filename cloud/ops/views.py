@@ -3,8 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 import pymysql
 from django.core.cache import cache
 import memcache
-from ops.models import employee
-
+from ops.models import employee,compiler
+import json
 # Create your views here.
 #conn = pymysql.Connect(host='127.0.0.1',user='root', password='aixocm', database='www', port=3306, charset='utf8')
 #cursor = conn.cursor()
@@ -51,10 +51,33 @@ def form(request):
 	else:
 		return HttpResponseRedirect('/login/')
 
-def compiler(request):
+def compiler_host(request):
 	user = request.session.get('username')
 	islogin = request.session.get('isLogin')
+	compilers = compiler.objects.all()
+	compilers_list = []
+	for i in compilers:
+		compile_info = []
+		compile_info.append(i.compile_name)
+		compile_info.append(i.compile_ip)
+		compile_info.append(i.create_user_id_id)
+		compile_info.append(i.repertory_dir)
+		compilers_list.append(compile_info)
 	if user:
-		return render(request, 'compiler.html', {'user': user})
+		return render(request, 'compiler.html', {'user': user,'compiler': compilers_list})
 	else:
 		return HttpResponseRedirect('/login/')
+
+
+def update(request):
+	if request.POST:
+		compile_name = request.POST['compile_name']
+		compile_ip = request.POST['compile_ip']
+		repertory_dir = request.POST['repertory_dir']
+		create_user_id_id = request.POST['create_user_id_id']
+		obj = compiler.objects.get(create_user_id_id=create_user_id_id)
+		obj.compile_name = compile_name
+		obj.compile_ip = compile_ip
+		obj.repertory_dir = repertory_dir
+		obj.save()
+		return HttpResponseRedirect('/login/')	

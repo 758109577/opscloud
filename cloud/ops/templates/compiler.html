@@ -1145,7 +1145,7 @@
 								</div>
 
 								<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
-
+									{% csrf_token %}
 									<thead>
 
 										<tr>
@@ -1167,6 +1167,20 @@
 									</thead>
 
 									<tbody>
+										<!--从数据库取编译机信息-->
+									
+									{% for i in compiler %}
+										<tr class="">
+											<td>{{ i.0 }}</td>
+											<td>{{ i.1 }}</td>
+											<td>{{ i.3 }}</td>
+											<td>{{ i.2 }}</td>
+											<td><a class="edit" href="javascript:;">Edit</a></td>
+											<td><a class="delete" href="javascript:;">Delete</a></td>
+										</tr>			
+									{% endfor %}
+
+										<!--取完信息-->
 
 										<tr class="">
 

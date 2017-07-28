@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>测试</title>
+<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+</head>
+<body>
+<table id="example" class="display">
+	<thead>
+		<tr>
+			<th>name</th>
+			<th>age</th>
+		</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+<script>
+	$('#example').DataTable({
+	ajax: "data.json"
+        columns: [
+            { data: 'name' },
+            { data: 'age' },
+        ]
+    } );
+</script>
+</body>
+</html>

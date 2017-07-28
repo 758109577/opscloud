@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^login/', ops_views.login),
     url(r'index/', ops_views.index),
     url(r'form/', ops_views.form),
-    url(r'compiler/', ops_views.compiler),
+    url(r'compiler/', ops_views.compiler_host),
+    url(r'update/', ops_views.update),
 ]
