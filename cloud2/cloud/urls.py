@@ -30,4 +30,7 @@ urlpatterns = [
     url(r'^node/', ops_views.node),
     url(r'node_update/', ops_views.node_update),
     url(r'node_delete/', ops_views.node_delete),
+    url(r'^server/', ops_views.server),
+    url(r'^server_app/', ops_views.server_app),
+    url(r'^server_add/', ops_views.server_add),
 ]

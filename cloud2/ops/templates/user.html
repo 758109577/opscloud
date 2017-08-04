@@ -604,7 +604,7 @@
 
 						<li >
 
-							<a href="form.html">
+							<a href="/node/">
 
 							Node节点配置</a>
 
@@ -612,7 +612,7 @@
 
 						<li >
 
-							<a href="compiler.html">
+							<a href="/compiler/">
 
 							编译机配置</a>
 
@@ -657,13 +657,13 @@
 
 							<ul class="sub-menu">
 
-								<li><a href="#">oss对象存储</a></li>
+								<li><a class="server" href="/server/">oss对象存储</a></li>
 
-								<li><a href="#">tsa服务</a></li>
+								<li><a class="server" href="/server/">tsa服务</a></li>
 
-								<li><a href="#">sms短信服务</a></li>
+								<li><a class="server" href="/server/">sms短信服务</a></li>
 
-								<li><a href="#">service唯一单号</a></li>
+								<li><a class="server" href="/server/">service唯一单号</a></li>
 							</ul>
 
 						</li>
@@ -680,9 +680,9 @@
 
 							<ul class="sub-menu">
 
-								<li><a href="#">nest-api</a></li>
+								<li><a class="server" href="/server/">nest-api</a></li>
 
-								<li><a href="#">nest-task</a></li>
+								<li><a class="server" href="/server/">nest-task</a></li>
 
 							</ul>
 
@@ -700,25 +700,25 @@
 
                             <ul class="sub-menu">
 
-                                <li><a href="#">core-server</a></li>
+                                <li><a class="server" href="/server/">core-server</a></li>
 
-                                <li><a href="#">pay-server</a></li>
+                                <li><a class="server" href="/server/">pay-server</a></li>
 
-                                <li><a href="#">bill</a></li>
+                                <li><a class="server" href="/server/">bill</a></li>
 
-                                <li><a href="#">h5</a></li>
+                                <li><a class="server" href="/server/">h5</a></li>
 
-                                <li><a href="#">web</a></li>
+                                <li><a class="server" href="/server/">web</a></li>
 
-                                <li><a href="#">loan-server</a></li>
+                                <li><a class="server" href="/server/">loan-server</a></li>
 
-                                <li><a href="#">manager</a></li>
+                                <li><a class="server" href="/server/">manager</a></li>
 
-                                <li><a href="#">enterprise</a></li>
+                                <li><a class="server" href="/server/">enterprise</a></li>
 
-                                <li><a href="#">stat</a></li>
+                                <li><a class="server" href="/server/">stat</a></li>
 
-                                <li><a href="#">jxpay-server</a></li>
+                                <li><a class="server" href="/server/">jxpay-server</a></li>
 
                             </ul>
 
@@ -736,7 +736,7 @@
 
                             <ul class="sub-menu">
 
-                                <li><a href="#">sparrow-master</a></li>
+                                <li><a class="server" href="/server/">sparrow-master</a></li>
 
                             </ul>
 
@@ -754,7 +754,7 @@
 
                             <ul class="sub-menu">
 
-                                <li><a href="#">loan-manager</a></li>
+                                <li><a class="server" href="/server/">loan-manager</a></li>
 
                             </ul>
 
@@ -882,7 +882,7 @@
 
 						<li >
 
-							<a href="login.html">
+							<a href="/user/">
 
 							用户管理</a>
 
@@ -1145,18 +1145,17 @@
 								</div>
 
 								<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
-									{% csrf_token %}
 									<thead>
 
 										<tr>
 
-											<th>编译机名称</th>
+											<th>用户id</th>
 
-											<th>编译机ip</th>
+											<th>用户名</th>
 
-											<th>代码仓库目录</th>
+											<th>部门</th>
 
-											<th>创建人</th>
+											<th>权限</th>
 
 											<th>Edit</th>
 
@@ -1167,14 +1166,14 @@
 									</thead>
 
 									<tbody>
-										<!--从数据库取编译机信息-->
+										<!--从数据库取服务器信息-->
 									
-									{% for i in compiler %}
+									{% for i in users_list %}
 										<tr class="">
 											<td>{{ i.0 }}</td>
 											<td>{{ i.1 }}</td>
-											<td>{{ i.3 }}</td>
 											<td>{{ i.2 }}</td>
+											<td>{{ i.3 }}</td>
 											<td><a class="edit" href="javascript:;">Edit</a></td>
 											<td><a class="delete" href="javascript:;">Delete</a></td>
 										</tr>			
@@ -1376,7 +1375,9 @@
 
 	<script src="/static/js/app.js"></script>
 
-	<script src="/static/js/table-editable.js"></script>    
+	<script src="/static/js/user.js"></script>    
+
+	<script src="/static/js/server.js"></script>    
 
 	<script>
 

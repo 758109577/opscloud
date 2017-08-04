@@ -27,3 +27,14 @@ class node_host(models.Model):
 
 	def __str__(self):
 		return self.node_ip
+
+class server_info(models.Model):
+	application = models.CharField(max_length=30)
+	server_ip = models.CharField(max_length=20)
+	server_port = models.IntegerField(null=True)
+	image_id = models.CharField(max_length=50)
+	container_id = models.CharField(max_length=50)
+	container_status = models.CharField(max_length=10)
+
+	def __str__(self):
+		return self.server_ip

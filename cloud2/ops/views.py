@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 import pymysql
 from django.core.cache import cache
 import memcache
-from ops.models import employee,compiler,node_host
+from ops.models import employee,compiler,node_host,server_info
 import json
 # Create your views here.
 #conn = pymysql.Connect(host='127.0.0.1',user='root', password='aixocm', database='www', port=3306, charset='utf8')
@@ -192,3 +192,70 @@ def node_delete(request):
 		return HttpResponseRedirect("/login/")
 
 ########################节点主机配置完毕########################
+
+#####################server配置###############################
+def server(request):
+	user = request.session.get('username')
+	islogin = request.session.get('isLogin')
+	if islogin:
+		server_dic = {
+				'oss对象存储':'ossServer',
+				'tsa服务':'tsaServer',
+				'sms短信服务':'smsServer',
+				'service唯一单号':'commonServer',
+				'nest-api':'apiServer',
+				'nest-task':'taskServer',
+				'core-server':'coreServer',
+				'pay-server':'payServer',
+				'bill':'billServer',
+				'h5':'h5Server',
+				'web':'webServer',
+				'loan-server':'loanServer',
+				'manager':'managerServer',
+				'stat':'statisticServer',
+				'jxpay-server':'jxpayServer'				
+			}
+		project_key = request.GET['server_name']
+		project_value = server_dic[project_key]
+		obj = server_info.objects.filter(application=project_value)
+		obj_list = []
+		for i in obj:
+			temp_list = []
+			temp_list.append(i.application)
+			temp_list.append(i.server_ip)
+			temp_list.append(i.server_port)
+			temp_list.append(i.image_id)
+			temp_list.append(i.container_id)
+			temp_list.append(i.container_status)
+			obj_list.append(temp_list)
+		obj_json = json.dumps(obj_list)
+		return HttpResponse(obj_json)
+	else:
+		return HttpResponseRedirect("/login/")
+
+def server_app(request):
+	user = request.session.get('username')
+	islogin = request.session.get('isLogin')
+	if islogin:
+		id_json = request.GET['id']
+		server_list = json.loads(id_json)
+		hosts_obj = node_host.objects.all().values('node_ip')
+		host_list = []
+		for i in hosts_obj:
+			host_list.append(i['node_ip'])
+		return render(request, 'server.html', {'user':user, 'server_list': server_list,'host_list':host_list})
+	else:
+		return HttpResponseRedirect("/login/")
+
+def server_add(request):
+	user = request.session.get('username')
+	islogin = request.session.get('isLogin')
+	if islogin and request.POST:
+		application = request.POST['appname']
+		server_ip = request.POST['host_ip']
+		port = int(request.POST['port'])
+		server_info.objects.create(application=application,server_ip=server_ip,server_port=port,image_id='',container_id='',container_status='')
+		return HttpResponseRedirect('/index/')
+	else:
+		return HttpResponseRedirect("/login/")
+##############################server配置结束##################
