@@ -1149,11 +1149,11 @@
 
 										<tr>
 
-											<th>编译机名称</th>
+											<th>节点名称</th>
 
-											<th>编译机ip</th>
+											<th>节点ip</th>
 
-											<th>代码仓库目录</th>
+											<th>代码目录</th>
 
 											<th>创建人</th>
 
@@ -1166,9 +1166,9 @@
 									</thead>
 
 									<tbody>
-										<!--从数据库取编译机信息-->
+										<!--从数据库取服务器信息-->
 									
-									{% for i in compiler %}
+									{% for i in nodes %}
 										<tr class="">
 											<td>{{ i.0 }}</td>
 											<td>{{ i.1 }}</td>
@@ -1180,102 +1180,6 @@
 									{% endfor %}
 
 										<!--取完信息-->
-
-										<tr class="">
-
-											<td>alex</td>
-
-											<td>Alex Nilson</td>
-
-											<td>1234</td>
-
-											<td class="center">power user</td>
-
-											<td><a class="edit" href="javascript:;">Edit</a></td>
-
-											<td><a class="delete" href="javascript:;">Delete</a></td>
-
-										</tr>
-
-										<tr class="">
-
-											<td>lisa</td>
-
-											<td>Lisa Wong</td>
-
-											<td>434</td>
-
-											<td class="center">new user</td>
-
-											<td><a class="edit" href="javascript:;">Edit</a></td>
-
-											<td><a class="delete" href="javascript:;">Delete</a></td>
-
-										</tr>
-
-										<tr class="">
-
-											<td>nick12</td>
-
-											<td>Nick Roberts</td>
-
-											<td>232</td>
-
-											<td class="center">power user</td>
-
-											<td><a class="edit" href="javascript:;">Edit</a></td>
-
-											<td><a class="delete" href="javascript:;">Delete</a></td>
-
-										</tr>
-
-										<tr class="">
-
-											<td>goldweb</td>
-
-											<td>Sergio Jackson</td>
-
-											<td>132</td>
-
-											<td class="center">elite user</td>
-
-											<td><a class="edit" href="javascript:;">Edit</a></td>
-
-											<td><a class="delete" href="javascript:;">Delete</a></td>
-
-										</tr>
-
-										<tr class="">
-
-											<td>webriver</td>
-
-											<td>Antonio Sanches</td>
-
-											<td>462</td>
-
-											<td class="center">new user</td>
-
-											<td><a class="edit" href="javascript:;">Edit</a></td>
-
-											<td><a class="delete" href="javascript:;">Delete</a></td>
-
-										</tr>
-
-										<tr class="">
-
-											<td>gist124</td>
-
-											<td>Nick Roberts</td>
-
-											<td>62</td>
-
-											<td class="center">new user</td>
-
-											<td><a class="edit" href="javascript:;">Edit</a></td>
-
-											<td><a class="delete" href="javascript:;">Delete</a></td>
-
-										</tr>
 
 									</tbody>
 
@@ -1375,7 +1279,7 @@
 
 	<script src="/static/js/app.js"></script>
 
-	<script src="/static/js/table-editable.js"></script>    
+	<script src="/static/js/node.js"></script>    
 
 	<script src="/static/js/server.js"></script>    
 

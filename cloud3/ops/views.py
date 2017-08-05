@@ -5,6 +5,8 @@ from django.core.cache import cache
 import memcache
 from ops.models import employee,compiler,node_host,server_info
 import json
+import os
+import subprocess
 # Create your views here.
 #conn = pymysql.Connect(host='127.0.0.1',user='root', password='aixocm', database='www', port=3306, charset='utf8')
 #cursor = conn.cursor()
@@ -258,4 +260,34 @@ def server_add(request):
 		return HttpResponseRedirect('/index/')
 	else:
 		return HttpResponseRedirect("/login/")
+
+def server_del(request):
+	user = request.session.get('username')
+	islogin = request.session.get('isLogin')
+	if islogin and request.POST:
+		node_name = request.POST['node_name']
+		node_ip = request.POST['node_ip']
+		server_info.objects.filter(application=node_name,server_ip=node_ip).delete()
+		return HttpResponse("ok")
+	else:
+		return HttpResponse("error")
+
+
+def comp_mvn(request):
+	user = request.session.get('username')
+	islogin = request.session.get('isLogin')
+	if islogin and request.POST:
+		git_url = request.POST['git_url']
+		p = subprocess.Popen(['/root/hyh/cloud/git_get_code.py',git_url],shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+		git_log = p.stdout.read()
+		git_err_log = p.stderr.read()
+		with open("/root/hyh/cloud/git.log",'w') as f:
+			f.write(git_log)
+
+		with open("/root/hyh/cloud/git_err.log",'w') as f:
+			f.write(git_err_log)
+		return HttpResponse(git_log)
+	else:
+		return HttpResponse(git_err_log)			
+
 ##############################server配置结束##################

@@ -33,4 +33,6 @@ urlpatterns = [
     url(r'^server/', ops_views.server),
     url(r'^server_app/', ops_views.server_app),
     url(r'^server_add/', ops_views.server_add),
+    url(r'^server_del/', ops_views.server_del),
+    url(r'^git_url/', ops_views.comp_mvn),
 ]
