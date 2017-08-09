@@ -1,0 +1,405 @@
+2017-08-09 07:21:52
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.kkdai:common-config:jar:0.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-plugin is missing. @ com.kkdai:common:0.0.1-SNAPSHOT, /data/code/project_git/common/pom.xml, line 74, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.kkdai:common-dal:jar:0.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-plugin is missing. @ com.kkdai:common:0.0.1-SNAPSHOT, /data/code/project_git/common/pom.xml, line 74, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.kkdai:common-proxy:jar:0.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-plugin is missing. @ com.kkdai:common:0.0.1-SNAPSHOT, /data/code/project_git/common/pom.xml, line 74, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.kkdai:common-base:jar:0.0.1-SNAPSHOT
+[WARNING] 'version' contains an expression but should be a constant. @ com.kkdai:common-base:${common.base.version}, /data/code/project_git/common/common-base/pom.xml, line 13, column 11
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-plugin is missing. @ com.kkdai:common:0.0.1-SNAPSHOT, /data/code/project_git/common/pom.xml, line 74, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.kkdai:common-sms:war:0.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-plugin is missing. @ com.kkdai:common:0.0.1-SNAPSHOT, /data/code/project_git/common/pom.xml, line 74, column 12
+[WARNING] The expression ${build.finalName} is deprecated. Please use ${project.build.finalName} instead.
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.kkdai:common-oss:war:0.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-plugin is missing. @ com.kkdai:common:0.0.1-SNAPSHOT, /data/code/project_git/common/pom.xml, line 74, column 12
+[WARNING] The expression ${build.finalName} is deprecated. Please use ${project.build.finalName} instead.
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.kkdai:common-tsa:war:0.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-plugin is missing. @ com.kkdai:common:0.0.1-SNAPSHOT, /data/code/project_git/common/pom.xml, line 74, column 12
+[WARNING] The expression ${build.finalName} is deprecated. Please use ${project.build.finalName} instead.
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.kkdai:common-service:war:0.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-plugin is missing. @ com.kkdai:common:0.0.1-SNAPSHOT, /data/code/project_git/common/pom.xml, line 74, column 12
+[WARNING] The expression ${build.finalName} is deprecated. Please use ${project.build.finalName} instead.
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.kkdai:common:pom:0.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-plugin is missing. @ line 74, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] common
+[INFO] common-config
+[INFO] common-proxy
+[INFO] common-base
+[INFO] common-dal
+[INFO] common-sms
+[INFO] common-oss
+[INFO] common-tsa
+[INFO] common-service
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building common 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common ---
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building common-config 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-config ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-config ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 16 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-config ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-config ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 16 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-config ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ common-config ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /data/code/project_git/common/common-config/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:testCompile (default-testCompile) @ common-config ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ common-config ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ common-config ---
+[INFO] Building jar: /data/code/project_git/common/common-config/target/common-config-0.0.1-SNAPSHOT.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building common-proxy 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-proxy ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-proxy ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /data/code/project_git/common/common-proxy/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-proxy ---
+[INFO] Compiling 18 source files to /data/code/project_git/common/common-proxy/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-proxy ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /data/code/project_git/common/common-proxy/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-proxy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ common-proxy ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /data/code/project_git/common/common-proxy/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:testCompile (default-testCompile) @ common-proxy ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ common-proxy ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ common-proxy ---
+[INFO] Building jar: /data/code/project_git/common/common-proxy/target/common-proxy-0.0.1-SNAPSHOT.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building common-base 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-base ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-base ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /data/code/project_git/common/common-base/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-base ---
+[INFO] Compiling 100 source files to /data/code/project_git/common/common-base/target/classes
+[WARNING] /data/code/project_git/common/common-base/src/main/java/com/kkdai/common/common/util/CSaiUtils.java:[15,15] BASE64Decoder是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /data/code/project_git/common/common-base/src/main/java/com/kkdai/common/common/util/CSaiUtils.java:[16,15] BASE64Encoder是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /data/code/project_git/common/common-base/src/main/java/com/kkdai/common/common/util/weibo/HttpClient.java:[13,15] BMPImageReader是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /data/code/project_git/common/common-base/src/main/java/com/kkdai/common/common/util/weibo/HttpClient.java:[13,66] GIFImageReader是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /data/code/project_git/common/common-base/src/main/java/com/kkdai/common/common/util/weibo/HttpClient.java:[15,5] JPEGImageReader是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /data/code/project_git/common/common-base/src/main/java/com/kkdai/common/common/util/weibo/HttpClient.java:[16,8] PNGImageReader是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /data/code/project_git/common/common-base/src/main/java/com/kkdai/common/common/util/weibo/ImageItem.java:[73,26] GIFImageReader是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /data/code/project_git/common/common-base/src/main/java/com/kkdai/common/common/util/weibo/ImageItem.java:[75,33] JPEGImageReader是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /data/code/project_git/common/common-base/src/main/java/com/kkdai/common/common/util/weibo/ImageItem.java:[77,33] PNGImageReader是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /data/code/project_git/common/common-base/src/main/java/com/kkdai/common/common/util/weibo/ImageItem.java:[79,33] BMPImageReader是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /data/code/project_git/common/common-base/src/main/java/com/kkdai/common/common/util/CSaiUtils.java:[47,20] BASE64Encoder是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /data/code/project_git/common/common-base/src/main/java/com/kkdai/common/common/util/CSaiUtils.java:[57,2] BASE64Decoder是内部专用 API, 可能会在未来发行版中删除
+[WARNING] /data/code/project_git/common/common-base/src/main/java/com/kkdai/common/common/util/CSaiUtils.java:[57,31] BASE64Decoder是内部专用 API, 可能会在未来发行版中删除
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-base ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /data/code/project_git/common/common-base/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-base ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ common-base ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /data/code/project_git/common/common-base/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:testCompile (default-testCompile) @ common-base ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ common-base ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ common-base ---
+[INFO] Building jar: /data/code/project_git/common/common-base/target/common-base-0.0.1-SNAPSHOT.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building common-dal 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-dal ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-dal ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-dal ---
+[INFO] Compiling 21 source files to /data/code/project_git/common/common-dal/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-dal ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-dal ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ common-dal ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /data/code/project_git/common/common-dal/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:testCompile (default-testCompile) @ common-dal ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ common-dal ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ common-dal ---
+[INFO] Building jar: /data/code/project_git/common/common-dal/target/common-dal-0.0.1-SNAPSHOT.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building common-sms 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-sms ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-sms ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-sms ---
+[INFO] Compiling 25 source files to /data/code/project_git/common/common-sms/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-sms ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-sms ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ common-sms ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /data/code/project_git/common/common-sms/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:testCompile (default-testCompile) @ common-sms ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ common-sms ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ common-sms ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [common-sms] in [/data/code/project_git/common/common-sms/target/common-sms]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/data/code/project_git/common/common-sms/src/main/webapp]
+[INFO] Webapp assembled in [1106 msecs]
+[INFO] Building war: /data/code/project_git/common/common-sms/target/common-sms.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building common-oss 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-oss ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-oss ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-oss ---
+[INFO] Compiling 23 source files to /data/code/project_git/common/common-oss/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-oss ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-oss ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ common-oss ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /data/code/project_git/common/common-oss/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:testCompile (default-testCompile) @ common-oss ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ common-oss ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ common-oss ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [common-oss] in [/data/code/project_git/common/common-oss/target/common-oss]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/data/code/project_git/common/common-oss/src/main/webapp]
+[INFO] Webapp assembled in [321 msecs]
+[INFO] Building war: /data/code/project_git/common/common-oss/target/common-oss.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building common-tsa 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-tsa ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-tsa ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 19 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-tsa ---
+[INFO] Compiling 40 source files to /data/code/project_git/common/common-tsa/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-tsa ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 19 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-tsa ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ common-tsa ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /data/code/project_git/common/common-tsa/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:testCompile (default-testCompile) @ common-tsa ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ common-tsa ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ common-tsa ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [common-tsa] in [/data/code/project_git/common/common-tsa/target/common-tsa]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/data/code/project_git/common/common-tsa/src/main/webapp]
+[INFO] Webapp assembled in [542 msecs]
+[INFO] Building war: /data/code/project_git/common/common-tsa/target/common-tsa.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building common-service 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-service ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-service ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-service ---
+[INFO] Compiling 24 source files to /data/code/project_git/common/common-service/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-service ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:compile (default-compile) @ common-service ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ common-service ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /data/code/project_git/common/common-service/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.1:testCompile (default-testCompile) @ common-service ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ common-service ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ common-service ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [common-service] in [/data/code/project_git/common/common-service/target/common-service]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/data/code/project_git/common/common-service/src/main/webapp]
+[INFO] Webapp assembled in [230 msecs]
+[INFO] Building war: /data/code/project_git/common/common-service/target/common-service.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] common ............................................. SUCCESS [  0.569 s]
+[INFO] common-config ...................................... SUCCESS [  4.925 s]
+[INFO] common-proxy ....................................... SUCCESS [  4.392 s]
+[INFO] common-base ........................................ SUCCESS [  8.702 s]
+[INFO] common-dal ......................................... SUCCESS [  1.705 s]
+[INFO] common-sms ......................................... SUCCESS [  6.124 s]
+[INFO] common-oss ......................................... SUCCESS [  4.196 s]
+[INFO] common-tsa ......................................... SUCCESS [  7.422 s]
+[INFO] common-service ..................................... SUCCESS [  3.935 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 42.611 s
+[INFO] Finished at: 2017-08-09T07:21:51+00:00
+[INFO] Final Memory: 63M/151M
+[INFO] ------------------------------------------------------------------------
+
+0

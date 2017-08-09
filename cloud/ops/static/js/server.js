@@ -14,7 +14,7 @@ $(".server").click(function(e){
 			//		alert(list[i][j]);
 			//	}
 			//}
-			window.location.href="/server_app/?id="+data;
+			window.location.href="/server_app/?id="+data+'&server_name='+server_name;
 		}
 	});
 });
@@ -66,27 +66,74 @@ $(".server_checkbox").change(function(){
 	}
 });
 
-
+/*
 $(".server_manager").click(function(e){
 	e.preventDefault();
 	var ele_text = $(this).text();
 	if (ele_text=="编译管理"){
+    	$(".clearfix").hide();
     	$("table").hide();
+		//$(".clearfix").addClass('compilehide');
     	$("#compile_form").removeAttr("style");
 	}
-	else {
-		alert("查看server.js");
+	//else {
+	//	alert("查看server.js");
+	//}
+});
+*/
+
+
+$(".server_checkbox").click(function(){
+	var is_check = $(this).prop('checked');
+	app_name = $(this).parent().parent().parent().next().text();
+	host_ip = $(this).parent().parent().parent().next().next().text();
+	port = $(this).parent().parent().parent().next().next().next().text();
+	if (is_check){
+		$(".server_manager").click(function(e){
+    		e.preventDefault();
+    		var ele_text = $(this).text();
+			if(ele_text=='发布服务'){
+				$(".clearfix").hide();
+				$("table").hide();
+				$("#publish_form").removeAttr("style");
+				/*
+				$.ajax({
+                url: '/server_publish/',
+                type: 'post',
+                data: {'app_name': app_name, 'host_ip': host_ip, 'port': port},
+                success: function(data){
+					return data;
+					}	
+				});
+				*/
+			}
+			else if(ele_text=="启动服务"){
+				alert("启动服务");
+			}
+			else if(ele_text=="编译管理"){
+				$(".clearfix").hide();
+		        $("table").hide();
+				$("#compile_form").removeAttr("style");
+			}
+			else{
+				alert("停止服务");
+			}
+		});
+	}
+	else{
+		alert('no');
 	}
 });
 
 $("#compile").click(function(){
+	var project_name = $("#project_name").val();
 	var git_url = $("#ssh_url option:selected").text();
 	$.ajax({
     	url: '/git_url/',
         type: 'post',
-        data: {'git_url': git_url},
-        success: function(data){
-			alert("yes");	
+        data: {'git_url': git_url, 'project_name': project_name},
+        success: function(log_info){
+			console.log(log_info);	
 		}
 	});
 });

@@ -35,6 +35,7 @@ var TableEditable = function () {
                 oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 4, false);
                 oTable.fnUpdate('<a class="delete" href="">Delete</a>', nRow, 5, false);
                 oTable.fnDraw();
+				//提交数据，保存到数据库
 					$.ajax({
 						url: '/update/',
 						type:"post",
@@ -55,6 +56,26 @@ var TableEditable = function () {
                 oTable.fnUpdate(jqInputs[3].value, nRow, 3, false);
                 oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 4, false);
                 oTable.fnDraw();
+            }
+
+			function deleteEditRow(oTable, nRow) {
+				var aData = oTable.fnGetData(nRow);
+                var jqInputs = $('>td', nRow);
+                //oTable.fnUpdate(jqInputs[0].innerText, nRow, 0, false);
+                //oTable.fnUpdate(jqInputs[1].innerText, nRow, 1, false);
+                //oTable.fnUpdate(jqInputs[2].innerText, nRow, 2, false);
+                //oTable.fnUpdate(jqInputs[3].innerText, nRow, 3, false);
+                /*oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 4, false);*/
+                oTable.fnDraw();
+				$.ajax({
+                	url: '/delete/',
+                    type:"post",
+                    data:{'compile_ip':jqInputs[1].innerText},
+                    dataType:"json",
+                    success:function(data){
+                        return null
+                    }
+                });
             }
 
             var oTable = $('#sample_editable_1').dataTable({
@@ -104,10 +125,11 @@ var TableEditable = function () {
                 if (confirm("Are you sure to delete this row ?") == false) {
                     return;
                 }
-
                 var nRow = $(this).parents('tr')[0];
+				deleteEditRow(oTable, nRow);
                 oTable.fnDeleteRow(nRow);
-                alert("Deleted! Do not forget to do some ajax to sync with backend :)");
+				
+                //alert("Deleted! Do not forget to do some ajax to sync with backend :)");
             });
 
             $('#sample_editable_1 a.cancel').live('click', function (e) {
@@ -136,7 +158,7 @@ var TableEditable = function () {
                     /* Editing this row and want to save it */
                     saveRow(oTable, nEditing);
                     nEditing = null;
-                    alert("Updated! Do not forget to do some ajax to sync with backend :)");
+                    //alert("Updated! Do not forget to do some ajax to sync with backend :)");
                 } else {
                     /* No edit in progress - let's start one */
                     editRow(oTable, nRow);

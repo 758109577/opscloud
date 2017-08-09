@@ -1161,6 +1161,16 @@
 
 										<div class="control-group">
 
+											<label class="control-label">请输入项目名</label>
+
+											<div class="controls">
+
+												<input id="project_name" type="text" placeholder="项目名" class="m-wrap large" />
+
+												<!--<span class="help-inline">Some hint here</span>-->
+
+											</div>
+
 											<label class="control-label">请选择编译路径</label>
 
 											<div class="controls">
@@ -1183,6 +1193,38 @@
 
                                 </div>
 
+								<!--结束-->
+
+								<!--发布选择版本表单-->
+											
+								<div id="publish_form" style="display:none;">
+                                    <form action="/publish_select/" method="post">
+
+                                        <div class="control-group">
+
+                                            <label class="control-label">请选择版本号</label>
+
+                                            <div class="controls">
+
+                                                <select id="server_publish" class="large m-wrap" tabindex="1">
+																	
+													{% for i in img_list %}
+
+													<option>{{ i }}</option>
+														
+													{% endfor %}
+
+                                                </select>
+
+                                            </div>
+											<input type="button" value="发布" id="publish"/>
+
+                                        </div>
+
+                                    </form>
+
+                                </div>					
+	
 								<!--结束-->
 
 								<!--添加应用表单-->
