@@ -88,6 +88,8 @@ $(".server_checkbox").click(function(){
 	app_name = $(this).parent().parent().parent().next().text();
 	host_ip = $(this).parent().parent().parent().next().next().text();
 	port = $(this).parent().parent().parent().next().next().next().text();
+	img_version = $(this).parent().parent().parent().next().next().next().next().text();
+	container_id = $(this).parent().parent().parent().next().next().next().next().next().text();
 	if (is_check){
 		$(".server_manager").click(function(e){
     		e.preventDefault();
@@ -96,19 +98,28 @@ $(".server_checkbox").click(function(){
 				$(".clearfix").hide();
 				$("table").hide();
 				$("#publish_form").removeAttr("style");
-				/*
-				$.ajax({
-                url: '/server_publish/',
-                type: 'post',
-                data: {'app_name': app_name, 'host_ip': host_ip, 'port': port},
-                success: function(data){
-					return data;
-					}	
+				$("#publish").click(function(){
+					var app_img = $("#server_publish option:selected").text();
+					$.ajax({
+                	url: '/server_publish/',
+                	type: 'post',
+                	data: {'app_name': app_name, 'host_ip': host_ip, 'port': port, 'app_img': app_img},
+                	success: function(data){
+						console.log(data);
+						}	
+					});
 				});
-				*/
 			}
 			else if(ele_text=="启动服务"){
-				alert("启动服务");
+				$.ajax({
+					url: '/server_start/',
+					type: 'post',
+					data: {'app_name': app_name, 'host_ip': host_ip, 'port': port, 'img_version': img_version, 'start': 'start'},
+					success: function(data){
+						console.log(data);
+					}
+
+				});
 			}
 			else if(ele_text=="编译管理"){
 				$(".clearfix").hide();
@@ -116,7 +127,15 @@ $(".server_checkbox").click(function(){
 				$("#compile_form").removeAttr("style");
 			}
 			else{
-				alert("停止服务");
+				$.ajax({
+                    url: '/server_stop/',
+                    type: 'post',
+                    data: {'app_name': app_name, 'host_ip': host_ip, 'port': port, 'container_id': container_id, 'stop': 'stop'},
+                    success: function(data){
+                        console.log(data);
+                    }
+
+                });
 			}
 		});
 	}

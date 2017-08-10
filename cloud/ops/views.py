@@ -329,6 +329,39 @@ def comp_mvn(request):
 
 ##############################server配置结束##################
 
+
+################paramiko上传下载镜像#############
+
+def remote_publish(localpath, remotepath, ip, app_name):
+	private_key = paramiko.RSAKey.from_private_key_file('/root/.ssh/id_rsa')
+	transport = paramiko.Transport((ip,22))
+	transport.connect(username='root',pkey=private_key)
+	sftp = paramiko.SFTPClient.from_transport(transport)
+	sftp.put(localpath,remotepath)
+
+	ssh = paramiko.SSHClient()
+	ssh._transport = transport
+	cmd = 'docker load < ' + remotepath
+	stdin, stdout, stderr = ssh.exec_command(cmd)
+	data = str(stdout.read(),encoding='utf-8')
+	transport.close()
+	with open('/root/hyh/cloud/logs/publish.log', 'w') as f:
+		f.write(data)
+	err = str(stderr.read(),encoding='utf-8')
+	if err:
+		with open('/root/hyh/cloud/logs/publish_err.log','w') as f:
+			f.write(err)
+	
+	#版本号写入数据库ops_server_info这张表
+	t = os.path.split(remotepath)	#获取路径的目录与文件的元组
+	img_version = t[1].split('.')[0].split('_')[2]	#截取镜像版本号
+	obj = server_info.objects.get(application=app_name,server_ip=ip)
+	obj.image_id = img_version
+	obj.save()	
+	
+
+
+#####################结束#######################
 #######################发布###########################
 
 def server_publish(request):
@@ -354,13 +387,147 @@ def server_publish(request):
 					}
 		app_name = request.POST['app_name']
 		host_ip = request.POST['host_ip']
-		port = request.POST['post']
+		port = request.POST['port']
+		app_img_name = request.POST['app_img']
+		src_img_path = os.path.join('/data/history_img',app_img_name)
+		#src_img_path = '/'.join(src_img)
+		remote_img_path = os.path.join('/tmp',app_img_name)
+		#remote_img_path = '/'.join(remote_img)
+		remote_publish(src_img_path, remote_img_path, host_ip, app_name)
 
+		return HttpResponse("publish ok")
+######################发布结束##################
+
+###################远程启动停止docker容器###########
+
+def remote_exec(app_name,ip,port,img_or_con_id, status):
+	
+	if status == 'start':
+		filelist = os.listdir('/tmp')
+		img_name = ''
+		for i in filelist:
+			if img_or_con_id in i:
+				img_name = i.split('.')[0]
 		private_key = paramiko.RSAKey.from_private_key_file('/root/.ssh/id_rsa')
-		transport = paramiko.Transport(('192.168.1.25',22))	
+		transport = paramiko.Transport((ip,22))
 		transport.connect(username='root',pkey=private_key)
-		sftp = paramiko.SFTPClient.from_transport(transport)
-		sftp.put('a','b')
-		transport.close()
+		ssh = paramiko.SSHClient()
+		ssh._transport = transport
 
-		return HttpResponse("ok")
+		#######判断端口是否被占用#########
+		is_port_used_cmd = "netstat -ntlp|grep " + port
+		used_stat_stdin,used_stat_stdout,used_stat_stderr = ssh.exec_command(is_port_used_cmd)
+		data_used_stdout = str(used_stat_stdout.read().strip(),encoding='utf-8')
+		if data_used_stdout:
+			return 2
+		##################判断结束#########
+
+		cmd = 'docker run -d -p ' + port + ':8080' + ' ' + img_name 
+		stdin, stdout, stderr = ssh.exec_command(cmd)
+		data = str(stdout.read(),encoding='utf-8')
+
+		#########检查容器是否起来#############
+		container = data[0:6]
+		cmd = "docker ps -a|grep " + container + "|" + "awk '{print $7}'"
+		con_stat_stdin, con_stat_stdout, con_stat_stderr = ssh.exec_command(cmd)
+		con_status = str(con_stat_stdout.read().strip(),encoding='utf-8')
+		######################
+		transport.close()
+		with open('/root/hyh/cloud/logs/start.log', 'w') as f:
+			f.write(data)
+		err = str(stderr.read(),encoding='utf-8')
+		if err:
+			with open('/root/hyh/cloud/logs/start_err.log','w') as f:
+				f.write(err)	
+
+		#启动后的容器id写入数据库#
+		if con_status == 'Up':
+			obj = server_info.objects.get(application=app_name,server_ip=ip)
+			obj.container_id = container
+			obj.container_status = 'active'
+			obj.save()
+			return 0
+		else:
+			obj = server_info.objects.get(application=app_name,server_ip=ip)
+			obj.container_id = container
+			obj.container_status = 'inactive'
+			obj.save()
+			return 1
+
+	else:
+		private_key = paramiko.RSAKey.from_private_key_file('/root/.ssh/id_rsa')
+		transport = paramiko.Transport((ip,22))
+		transport.connect(username='root',pkey=private_key)
+		ssh = paramiko.SSHClient()
+		ssh._transport = transport
+
+		############判断端口是否被占用,被占用则停止容器并删除容器，否则返回状态吗1，容器不存在######
+		is_port_used_cmd = "netstat -ntlp|grep " + port
+		used_stat_stdin,used_stat_stdout,used_stat_stderr = ssh.exec_command(is_port_used_cmd)
+		if used_stat_stdout.read():
+			stop_cmd = "docker stop " + img_or_con_id + ';' + "docker rm " + img_or_con_id
+			stop_stat_stdin,stop_stat_stdout,stop_stat_stderr = ssh.exec_command(stop_cmd)
+			#data_stdout = str(stop_stat_stdout.readline().strip(),encoding='utf-8')
+			data_stderr = str(stop_stat_stderr.read().strip(),encoding='utf-8')
+			transport.close()
+			if data_stderr:
+				return 1
+			else:
+				obj = server_info.objects.get(application=app_name,server_ip=ip)
+				obj.container_id = ''
+				obj.container_status = 'inactive'
+				obj.save()
+				return 0
+		else:
+			return 2 
+        ##################判断结束#########
+##################启动停止结束#####################
+
+
+
+
+#####################启动停止服务################
+
+def server_start(request):
+	user = request.session.get('username')
+	islogin = request.session.get('isLogin')
+	if islogin and request.POST:
+		app_name = request.POST['app_name']
+		host_ip = request.POST['host_ip']
+		port = request.POST['port']
+		img_version = request.POST['img_version']
+		status = request.POST['start']
+		exec_res = remote_exec(app_name,host_ip,port,img_version,status)
+		if exec_res == 0:
+			return HttpResponse("start successful")
+		elif exec_res == 2:
+			return HttpResponse("port is used")
+		else:
+			return HttpResponse("start false")
+	else:
+		HttpResponseRedirect("/login/")
+
+#########################启动服务配置完毕#############
+
+##################停止服务###############
+
+def server_stop(request):
+	user = request.session.get('username')
+	islogin = request.session.get('isLogin')
+	if islogin and request.POST:
+		app_name = request.POST['app_name']
+		host_ip = request.POST['host_ip']
+		port = request.POST['port']
+		container_id = request.POST['container_id']
+		status = request.POST['stop']
+		exec_res = remote_exec(app_name,host_ip,port,container_id,status)
+		if exec_res == 0:
+			return HttpResponse("stop successful")
+		elif exec_res == 1:
+			return HttpResponse("stop false")
+		else:
+			return HttpResponse("container not exist!")
+	else:
+		HttpResponseRedirect("/login/")
+
+####################结束#########################

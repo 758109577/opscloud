@@ -1,4 +1,4 @@
-2017-08-09 07:21:52
+2017-08-10 19:03:17
 [INFO] Scanning for projects...
 [WARNING] 
 [WARNING] Some problems were encountered while building the effective model for com.kkdai:common-config:jar:0.0.1-SNAPSHOT
@@ -61,6 +61,7 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] 
 [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-config ---
+[INFO] Deleting /data/code/project_git/common/common-config/target
 [INFO] 
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-config ---
 [debug] execute contextualize
@@ -99,6 +100,7 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] 
 [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-proxy ---
+[INFO] Deleting /data/code/project_git/common/common-proxy/target
 [INFO] 
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-proxy ---
 [debug] execute contextualize
@@ -135,6 +137,7 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] 
 [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-base ---
+[INFO] Deleting /data/code/project_git/common/common-base/target
 [INFO] 
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-base ---
 [debug] execute contextualize
@@ -184,6 +187,7 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] 
 [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-dal ---
+[INFO] Deleting /data/code/project_git/common/common-dal/target
 [INFO] 
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-dal ---
 [debug] execute contextualize
@@ -220,6 +224,7 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] 
 [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-sms ---
+[INFO] Deleting /data/code/project_git/common/common-sms/target
 [INFO] 
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-sms ---
 [debug] execute contextualize
@@ -253,7 +258,7 @@
 [INFO] Assembling webapp [common-sms] in [/data/code/project_git/common/common-sms/target/common-sms]
 [INFO] Processing war project
 [INFO] Copying webapp resources [/data/code/project_git/common/common-sms/src/main/webapp]
-[INFO] Webapp assembled in [1106 msecs]
+[INFO] Webapp assembled in [346 msecs]
 [INFO] Building war: /data/code/project_git/common/common-sms/target/common-sms.war
 [INFO] WEB-INF/web.xml already added, skipping
 [INFO]                                                                         
@@ -262,6 +267,7 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] 
 [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-oss ---
+[INFO] Deleting /data/code/project_git/common/common-oss/target
 [INFO] 
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-oss ---
 [debug] execute contextualize
@@ -295,7 +301,7 @@
 [INFO] Assembling webapp [common-oss] in [/data/code/project_git/common/common-oss/target/common-oss]
 [INFO] Processing war project
 [INFO] Copying webapp resources [/data/code/project_git/common/common-oss/src/main/webapp]
-[INFO] Webapp assembled in [321 msecs]
+[INFO] Webapp assembled in [363 msecs]
 [INFO] Building war: /data/code/project_git/common/common-oss/target/common-oss.war
 [INFO] WEB-INF/web.xml already added, skipping
 [INFO]                                                                         
@@ -304,6 +310,7 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] 
 [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-tsa ---
+[INFO] Deleting /data/code/project_git/common/common-tsa/target
 [INFO] 
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-tsa ---
 [debug] execute contextualize
@@ -337,7 +344,7 @@
 [INFO] Assembling webapp [common-tsa] in [/data/code/project_git/common/common-tsa/target/common-tsa]
 [INFO] Processing war project
 [INFO] Copying webapp resources [/data/code/project_git/common/common-tsa/src/main/webapp]
-[INFO] Webapp assembled in [542 msecs]
+[INFO] Webapp assembled in [429 msecs]
 [INFO] Building war: /data/code/project_git/common/common-tsa/target/common-tsa.war
 [INFO] WEB-INF/web.xml already added, skipping
 [INFO]                                                                         
@@ -346,6 +353,7 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] 
 [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ common-service ---
+[INFO] Deleting /data/code/project_git/common/common-service/target
 [INFO] 
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ common-service ---
 [debug] execute contextualize
@@ -379,27 +387,27 @@
 [INFO] Assembling webapp [common-service] in [/data/code/project_git/common/common-service/target/common-service]
 [INFO] Processing war project
 [INFO] Copying webapp resources [/data/code/project_git/common/common-service/src/main/webapp]
-[INFO] Webapp assembled in [230 msecs]
+[INFO] Webapp assembled in [276 msecs]
 [INFO] Building war: /data/code/project_git/common/common-service/target/common-service.war
 [INFO] WEB-INF/web.xml already added, skipping
 [INFO] ------------------------------------------------------------------------
 [INFO] Reactor Summary:
 [INFO] 
-[INFO] common ............................................. SUCCESS [  0.569 s]
-[INFO] common-config ...................................... SUCCESS [  4.925 s]
-[INFO] common-proxy ....................................... SUCCESS [  4.392 s]
-[INFO] common-base ........................................ SUCCESS [  8.702 s]
-[INFO] common-dal ......................................... SUCCESS [  1.705 s]
-[INFO] common-sms ......................................... SUCCESS [  6.124 s]
-[INFO] common-oss ......................................... SUCCESS [  4.196 s]
-[INFO] common-tsa ......................................... SUCCESS [  7.422 s]
-[INFO] common-service ..................................... SUCCESS [  3.935 s]
+[INFO] common ............................................. SUCCESS [  0.590 s]
+[INFO] common-config ...................................... SUCCESS [  2.745 s]
+[INFO] common-proxy ....................................... SUCCESS [  2.771 s]
+[INFO] common-base ........................................ SUCCESS [  7.460 s]
+[INFO] common-dal ......................................... SUCCESS [  1.854 s]
+[INFO] common-sms ......................................... SUCCESS [  4.889 s]
+[INFO] common-oss ......................................... SUCCESS [  4.492 s]
+[INFO] common-tsa ......................................... SUCCESS [  7.122 s]
+[INFO] common-service ..................................... SUCCESS [  4.404 s]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 42.611 s
-[INFO] Finished at: 2017-08-09T07:21:51+00:00
-[INFO] Final Memory: 63M/151M
+[INFO] Total time: 36.909 s
+[INFO] Finished at: 2017-08-10T19:03:17+08:00
+[INFO] Final Memory: 69M/170M
 [INFO] ------------------------------------------------------------------------
 
 0

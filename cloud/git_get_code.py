@@ -23,7 +23,8 @@ def create_md5():
 	m.update(bytes(str(time.time()),encoding='utf-8'))
 	return m.hexdigest()
 rad = create_md5()[0:6] 
-img_name = app_name + '_' + rad
+t = time.strftime("%Y%m%d-%H-%M",time.localtime(time.time()))
+img_name = app_name + '_' + t + '_' + rad
 ###########生成字符串结束###########
 
 ############拉取代码####################
